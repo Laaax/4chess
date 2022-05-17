@@ -1,0 +1,36 @@
+
+<body>
+    <div class="lobby-box">
+        <mat-card class="host-box">
+                <h1 id="players-title">Players:</h1>
+                <mat-chip-list aria-label="Fish selection">
+                    <mat-chip [innerHTML]="playerList[0].name" *ngIf="playerList[0].present" class="chip" [disabled]="playerList[0].joined==false"></mat-chip>
+                    <mat-chip [innerHTML]="playerList[1].name" *ngIf="playerList[1].present" class="chip" [disabled]="playerList[1].joined==false">ffffffffff</mat-chip>
+                    <mat-chip [innerHTML]="playerList[2].name" *ngIf="playerList[2].present" class="chip" [disabled]="playerList[2].joined==false">ffffffffff</mat-chip>
+                    <mat-chip [innerHTML]="playerList[3].name" *ngIf="playerList[3].present" class="chip" [disabled]="playerList[3].joined==false">ffffffffff</mat-chip>
+                </mat-chip-list>
+            
+            <div class="team-box">
+                <div class="team-players">
+                    <h1 class="team-title">Team 1</h1>
+                    <button [innerHTML]="top1Button.name" (click)="join($event)" id="p1-button" class="team-player-button" mat-stroked-button>Join</button>
+                    <button [innerHTML]="top2Button.name" (click)="join($event)" id="p2-button" class="team-player-button" mat-stroked-button>eeeeeeeeee</button>
+                </div>
+                
+                <div class="team-players">
+                    <h1 class="team-title">Team 2</h1>
+                    <button [innerHTML]="bot1Button.name" (click)="join($event)" id="p3-button" class="team-player-button" mat-stroked-button>Join</button>
+                    <button [innerHTML]="bot2Button.name" (click)="join($event)" id="p4-button" class="team-player-button" mat-stroked-button>eeeeeeeeee</button>
+                </div>
+            </div>
+            
+            <div class="host-buttons">
+                <button *ngIf="isHost" (click)="startGame()" class="game-button" [disabled]="!canStart" mat-raised-button color="primary">Start Game</button>
+                <button *ngIf="isHost" (click)="openSnackBarCode()" [cdkCopyToClipboard]="lobbyId" class="game-button" mat-raised-button color="accent">Get code</button>
+            </div>
+            <p *ngIf="!isHost"></p>
+            <p *ngIf="!isHost">Waiting for host to start</p>
+            
+        </mat-card>
+    </div>
+</body>

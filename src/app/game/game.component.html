@@ -1,0 +1,61 @@
+
+<div *ngIf="!inGame" class="top-buttons">
+  <button (click)="leave()" mat-raised-button color="primary">Leave</button>
+  <button (click)="endGame('return')" *ngIf="inGame && isHost" mat-raised-button color="accent">End Game</button>
+  <p *ngIf="(!isHost || (!inGame && isHost))"></p>
+</div>
+
+<app-lobby [hidden]="inGame"></app-lobby>
+<div [hidden]="inGame"></div>
+
+<div *ngIf="inGame">
+  <div *ngIf="choosing" class="modal">
+    <div class="modal-content">
+      <p id="new-piece-text" class="center">Choose a new piece</p>
+      <div class="new-pieces">
+        <button (click)="choosePiece($event.target)" class="new-piece">♜</button>
+        <button (click)="choosePiece($event.target)" class="new-piece">♞</button>
+        <button (click)="choosePiece($event.target)" class="new-piece">♝</button>
+        <button (click)="choosePiece($event.target)" class="new-piece">♛</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="outer">
+    <div class="middle">
+      <div class="inner">
+        <div class="top-buttons">
+          <button (click)="leave()" mat-raised-button color="primary">Leave</button>
+          <button (click)="endGame('return')" *ngIf="inGame && isHost" mat-raised-button color="accent">End Game</button>
+          <p *ngIf="(!isHost || (!inGame && isHost))"></p>
+        </div>
+        <div class="chessboard">
+          <div (click)="change(square)" *ngFor="let square of squares; let i = index; let even = even; let odd = odd"
+          [ngClass]="{'white': ((0 == i % 2) && (0 == square.y % 2)) || ((1 == i % 2) && (1 == square.y % 2)),
+          'black': ((1 == i % 2) && (0 == square.y % 2)) || ((0 == i % 2) && (1 == square.y % 2)),
+          'piece': square.name != '',
+          'p1-piece': square.player == 1,
+          'p2-piece': square.player == 2,
+          'p3-piece': square.player == 3,
+          'p4-piece': square.player == 4,
+          'highlight1': (square.highlight == true) && (((0 == i % 2) && (0 == square.y % 2)) || ((1 == i % 2) && (1 == square.y % 2))),
+          'highlight2': (square.highlight == true) && (((1 == i % 2) && (0 == square.y % 2)) || ((0 == i % 2) && (1 == square.y % 2)))}">
+            {{ square.piece }}
+          </div>
+          <div class="team1-float">
+            <p class="game-player-left" [ngClass]="{'player1Turn': (p1Turn == true)}" [innerHTML]="p1Name"></p>
+            <p class="game-player-right" [ngClass]="{'player2Turn': (p2Turn == true)}" [innerHTML]="p2Name"></p>
+          </div>
+          <div class="team2-float">
+            <p class="game-player-left" [ngClass]="{'player3Turn': (p3Turn == true)}" [innerHTML]="p3Name"></p>
+            <p class="game-player-right" [ngClass]="{'player4Turn': (p4Turn == true)}" [innerHTML]="p4Name"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!--<button (click)="trapP3()">trap p3</button>-->
+
+
+<router-outlet></router-outlet>

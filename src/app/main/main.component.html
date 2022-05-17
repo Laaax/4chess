@@ -1,0 +1,34 @@
+<body>
+    <div class="index-box">
+        <mat-card class="main-box">
+            <h1 id="chess" class="center-text">Chess Game</h1>
+            <p></p>
+            <mat-form-field class="center-text" hintLabel="Max 10 characters">
+                <mat-label>Favorite food</mat-label>
+                <input (keyup)="key(input.value)" (paste)="paste(input.value)" matInput class="center-text" #input maxLength="10" placeholder="Ex. Pizza" [(ngModel)]="name" autocomplete="off">
+                <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+            </mat-form-field>
+            <p></p>
+            <p></p>
+            <button (click)="updateJoining()" id="join" class="index-button" mat-raised-button color="primary" [disabled]="name=='' || name[0]==' '">Join a Game</button>
+            <p></p>
+            <button (click)="createGame()" id="create" class="index-button" mat-raised-button color="accent" [disabled]="name=='' || name[0]==' '">Create Game</button>
+        </mat-card>
+        <div *ngIf="joining" class="modal">
+          
+            <div class="modal-content">
+              <span class="exit-modal" (click)="updateJoining()">&times;</span>
+              <mat-form-field class="center-text">
+                <mat-label>Lobby Id</mat-label>
+                <input matInput type="text" [(ngModel)]="lobbyId" autocomplete="off">
+              </mat-form-field>
+              
+              <button (click)="Join()" mat-raised-button color="primary">Join</button>
+              <p></p>
+              <p *ngIf="roomNotExist" class="center-text errorText">Room does not exist</p>
+              <p *ngIf="roomFull" class="center-text errorText">Room is full</p>
+              <p *ngIf="roomInGame" class="center-text errorText">Currently in game</p>
+            </div>
+        </div>
+    </div>
+</body>

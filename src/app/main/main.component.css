@@ -1,0 +1,104 @@
+body {
+    background-color: rgb(31, 75, 90);
+}
+
+.index-box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.main-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    width: 250px;
+    height: 250px;
+}
+
+.index-button {
+    align-self: center;
+    width: 100%;
+}
+
+.center-text {
+    text-align: center;
+}
+
+#join {
+    font-size: 30px;
+    height: 40px;
+}
+
+#create {
+    font-size: 24px;
+}
+
+.title-box {
+    display: flex;
+    align-items: center;
+}
+
+#chess {
+    font: 24px;
+    font-weight: bold;
+    font-family: "Comic Sans MS", "Comic Sans", Papyrus;
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rbg(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 12px 20px 0px 20px;
+    border: 1px solid #888;
+    width: 200px;
+    border-radius: 15px;
+    border-top-right-radius: 0px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.errorText {
+    color: red;
+}
+
+.roomInput {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.exit-modal {
+    margin-top: -27px;
+    margin-left: 190px;
+    height: 20px;
+    width: 30px;
+    background-color: #fefefe;
+    text-align: center;
+    border-radius: 15px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.exit-modal:hover {
+    cursor: pointer;
+}

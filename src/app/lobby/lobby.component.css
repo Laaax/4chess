@@ -1,0 +1,110 @@
+body {
+    background-color: rgb(31, 75, 90);
+}
+
+.chip {
+    background-color: rgb(31, 75, 90);
+    color: white;
+}
+
+.p1-chip {
+    background-color: lightblue;
+}
+
+.p2-chip {
+    background-color: lightgreen;
+}
+
+.p3-chip {
+    background-color: lightpink;
+}
+
+.p4-chip {
+    background-color: #DDBDF1;
+}
+
+.lobby-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 92.5vh;
+}
+
+.host-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+}
+
+.team-box {
+    display:flex;
+    flex-direction: row;
+}
+
+.team-players {
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+.team-player {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 6px 24px 0px 24px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 240px;
+    padding-top: 4px;
+}
+
+.team-player-button {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.game-button {
+    margin-top: 24px;
+}
+
+#p1-button {
+    border-color: #264653;
+}
+
+#p2-button {
+    border-color: #2A9D8F;
+}
+
+#p3-button {
+    border-color: #F4A261;
+}
+
+#p4-button {
+    border-color: #E76F51;
+}
+
+#players-title {
+    font: 24px;
+    font-weight: bold;
+    font-family: "Comic Sans MS", "Comic Sans", Papyrus;
+}
+
+.team-title {
+    font: 24px;
+    font-weight: bold;
+    font-family: "Comic Sans MS", "Comic Sans", Papyrus;
+    margin-top: 24px;
+    align-self: center;
+}
+
+.host-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+}

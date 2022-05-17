@@ -1,0 +1,144 @@
+:host {
+    font-family: Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/*
+.test {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    border: 2px solid black;
+}
+
+.board {
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    border: 0px solid salmon;
+    margin: 0px;
+}
+
+.square {
+    display: flex;
+    font-size: 40px;
+    margin: auto;
+    border: 2px solid black;
+    text-align: center;
+    width: 45px;
+    height: 45px;
+}
+
+.mark {
+    margin: auto;
+    font-weight: bold;
+}
+
+*/
+
+.chessboard {
+    width: 1280px;
+    height: 640px;
+    margin: auto;
+    border: 25px solid rgb(194, 99, 99);
+}
+
+.black {
+    float: left;
+    width: 80px;
+    height: 80px;
+    background-color: #999;
+    font: 50px Arial, sans-serif;
+    text-align:center;
+    display: table-cell;
+    vertical-align:middle;
+}
+
+.white {
+    float: left;
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    font: 50px Arial, sans-serif;
+    text-align:center;
+    display: table-cell;
+    vertical-align:middle;
+}
+
+.piece:hover {
+    cursor: pointer;
+    background-color: rgb(16, 172, 211);
+}
+
+.highlight {
+    background-color: rgb(16, 172, 211);
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rbg(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 5px 20px 20px 20px;
+    border: 1px solid #888;
+    width: 30%;
+    min-width: 250px;
+    border-radius: 15px;
+}
+
+.new-pieces {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.new-piece {
+    font-size: 50px;
+    border: 2px solid gray;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+}
+
+.new-piece:hover {
+    cursor: pointer;
+    background-color: rgb(16, 172, 211);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+#new-piece-text {
+    font-size: 20px;
+    color: white;
+    background-color: rgb(34, 27, 27);
+    border-radius: 15px 15px 0px 0px;
+    width: 100%;
+    margin-top: -6px;
+    margin-left: -20px;
+    padding: 10px 20px 10px 20px;
+}
